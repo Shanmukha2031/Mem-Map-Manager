@@ -1,0 +1,44 @@
+# Bitwise Memory Manager
+
+## Description
+This project implements a custom **Memory Manager** that provides memory allocation and deallocation functions, similar to `malloc` and `free`. It uses bitmaps to track free and allocated memory slots efficiently. The project includes several components:
+
+- **Memory Management Functions**: Functions for initializing, allocating, and freeing memory.
+- **Bitmap Operations**: Used to track memory allocation at a granular level.
+
+## Project Structure
+
+- **`memory_manager.c`**: Implements the memory manager, including initialization, allocation, deallocation, and printing memory snapshots.
+- **`bitmap.c`**: Implements bitmap operations for tracking memory allocation.
+- **Header Files**:
+  - `memory_manager.h`: Declares memory manager structures and functions.
+  - `common.h`: Defines bitmap utility functions and constants.
+  - `interposition.h`: Replaces `malloc` and `free` with the custom memory manager functions.
+
+## Compilation
+
+To compile the project, use the provided **Makefile**.
+
+## To compile the program:
+make
+This will generate the memory_manager executable. After compilation, you can use the executable to manage memory.
+
+## To clean up the compiled files:
+make clean
+
+## Memory Manager:
+mem_mngr_init(): Initializes the memory manager.
+mem_mngr_alloc(size_t size): Allocates memory of a specified size.
+mem_mngr_free(void *ptr): Frees a previously allocated memory block.
+mem_mngr_print_snapshot(): Prints a snapshot of the memory manager's current state.
+mem_mngr_leave(): Cleans up the memory manager and frees all allocated resources.
+Bitmap Operations:
+bitmap_set_bit(), bitmap_clear_bit(): Manipulate bits to mark memory slots as free or allocated.
+bitmap_print_bitmap(): Outputs the current state of the bitmap.
+
+
+Author
+Shanmukha Subrahmanyam Rallapalli
+
+License
+This project is licensed under the MIT License.
